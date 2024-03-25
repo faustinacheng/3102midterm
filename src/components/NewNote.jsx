@@ -24,13 +24,14 @@ function NewNote(props) {
         });
     }
 
-    function handleClick() {
+    function handleClick(event) {
         props.onAdd(note);
         setNote({ title: "", content: "" });
+        event.preventDefault();
     }
 
     return (
-        <div className="newNote">
+        <form className="newNote">
             <input
                 onChange={handleChange}
                 name="title"
@@ -45,7 +46,7 @@ function NewNote(props) {
                 value={note.content}
             />
             <button onClick={handleClick}>Add</button>
-        </div>
+        </form>
     );
 }
 

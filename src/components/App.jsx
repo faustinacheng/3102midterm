@@ -7,11 +7,23 @@ import NewNote from "./NewNote";
 
 function App() {
     const [currNotes, setNotes] = useState(notes);
+    const [currKey, setKey] = useState(notes.length + 1);
 
     function addNote(note) {
-        console.log("Note added");
+        note.key = currKey;
+        setKey((prevKey) => {
+            return prevKey + 1;
+        });
         setNotes((prevNotes) => {
             return [...prevNotes, note];
+        });
+    }
+
+    function deleteNote(id) {
+        setNotes((prevNotes) => {
+            return prevNotes.filter((note) => {
+                return note.key !== id;
+            });
         });
     }
 
@@ -24,10 +36,11 @@ function App() {
             {currNotes.map((note, index) => {
                 return (
                     <Note
-                        key={index}
-                        id={index}
+                        key={note.key}
+                        id={note.key}
                         title={note.title}
                         content={note.content}
+                        onDelete={deleteNote}
                     />
                 );
             })}
