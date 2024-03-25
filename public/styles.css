@@ -54,4 +54,43 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  .newNote {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #aaa;
+    padding: 10px;
+    width: 500px;
+    height: 150px;
+    margin: 25px auto;
+    position: relative;
+  }
+
+  .newNote input, .newNote textarea {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 1.3em;
+    border: none;
+  }
+
+  .newNote textarea {
+    height: 90px;
+    resize: none;
+  }
+
+.newNote button {
+    background: #f5ba13;
+    color: #fff;
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+}
   
